@@ -6,4 +6,4 @@
 # add option to disable bitlocker
 
 # Get-BitLockerVolume | Format-List volumetype,mountpoint,keyprotector
-(Get-BitLockerVolume -mountpoint C:).keyprotector
+(Get-BitLockerVolume -mountpoint C:).keyprotector | format-list keyprotectorid,recoverypassword
