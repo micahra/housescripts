@@ -1,0 +1,1 @@
+# Script to remove all Windows store telemetry items and disable unncessary services
