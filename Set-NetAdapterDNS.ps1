@@ -6,5 +6,6 @@ Get-NetAdapter | format-list name,ifindex,status
 
 # Store the results that have status UP in a variable
 # Give the option to select all UP interfaces or a single UP inteface
+# If the interface starts with vEthernet (Hyper V), ignore these interfaces
 
 # Give option of which DNS to set or set to DHCP interface (clear the static assignment)
