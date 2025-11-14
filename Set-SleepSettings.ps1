@@ -2,7 +2,7 @@
 # Hibernate off
 # sleep (when powered) off
 
-# C# interface
+# C# interface  
 #var newProcessInfo = new System.Diagnostics.ProcessStartInfo();
 #        newProcessInfo.FileName = @"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe";
 #        newProcessInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden; // hide processes as they happen
