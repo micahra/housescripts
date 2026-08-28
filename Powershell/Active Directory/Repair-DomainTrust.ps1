@@ -3,3 +3,5 @@
 
 $credential = Get-Credential
 Test-ComputerSecureChannel -Repair -Credential $credential
+
+# If repair fails, use this reset: Reset-ComputerMachinePassword -Credential $credential
