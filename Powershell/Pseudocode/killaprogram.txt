@@ -1,3 +1,0 @@
-Program that will prompt for a process name and then kill
-Give options for conflicts if multiple are identified
-Give option to kill all associated processes or parents
