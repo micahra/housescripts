@@ -4,3 +4,14 @@ mradermacher/Qwen3.5-13B-Deckard-Heretic-Uncensored-Thinking-i1-GGUF
 DavidAU/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking
 HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF
 huihui-ai/Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated
+
+use: 
+mradermacher/Qwen3-30B-A3B-abliterated-erotic-i1-GGUF
+mlabonne/NeuralDaredevil-8B-abliterated
+
+reasoning:
+mradermacher/Qwen3-30B-A3B-abliterated-erotic-i1-GGUF This model is very powerful. It was abliterated but also trained on uncensored material. I have found this model to perform very close to the original model while being completely uncensored. It does struggle a little more in agentic tasks compared to the original but in everything else its near perfect. Its hallucination rates are very low compared to other abliterated versions of Qwen3 30b a3b and its pretty knowledgable.
+
+mlabonne/NeuralDaredevil-8B-abliterated This model is absolutely amazing, it was abliterated but was also DPO finetuned. The original model was Llama3-8b. This model completely outperforms the original. And again this model is completely uncensored. Also the author of this model has generously provided information about what datasets he used to train this model and what he did to achieve these results.
+
+https://www.reddit.com/r/LocalLLaMA/comments/1nq0cp9/important_why_abliterated_models_suck_here_is_a/
