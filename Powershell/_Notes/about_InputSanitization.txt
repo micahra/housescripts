@@ -1,0 +1,56 @@
+
+
+To sanitize input in PowerShell and prevent security vulnerabilities like command injection, the most effective method is to use strongly typed parameters and block validation attributes within a advanced function.
+Here is how to securely accept and sanitize input in PowerShell.
+1. Use Declarative Parameter Validation (Best Practice)Instead of manually cleaning strings using regular expressions, use PowerShell's built-in validation attributes to restrict what the user can input.
+
+powershell
+
+function Get-SecureLog {
+    [CmdletBinding()]
+    param (
+        # 1. Force a safe data type
+        [Parameter(Mandatory = $true)]
+        [int]$LogId,
+
+        # 2. Restrict string inputs to specific safe patterns
+        [Parameter(Mandatory = $true)]
+        [ValidatePattern('^[a-zA-Z0-9_-]+$')]
+        [string]$Username,
+
+        # 3. Limit inputs to a predefined safe list
+        [Parameter(Mandatory = $true)]
+        [ValidateSet('Application', 'System', 'Security')]
+        [string]$LogName
+    )
+
+    process {
+        # Input is guaranteed safe by the time it reaches here
+        Get-EventLog -LogName $LogName -InstanceId $LogId -Message "*$Username*"
+    }
+}
+
+2. Escape Arguments for External Executables
+
+If you must pass user input into external command-line tools (like cmd.exe or openssl), use [argumentlist] with Start-Process or use the [Management.Automation.Language.CodeGeneration] class to escape characters.
+
+For external tools: Use Start-Process which handles argument separation safely.
+
+For internal evaluation: Use [Management.Automation.Language.CodeGeneration]::EscapeBlockComment() or EscapeSingleQuotedString() if dynamically building strings
+
+
+3. Sanitize File Paths SafelyIf user input defines a file path, prevent directory traversal attacks (e.g., ..\..\Windows\) by resolving the full literal path.
+
+
+
+param([string]$UserInputPath)
+
+# Resolve the absolute path
+$FullyResolvedPath = Resolve-Path -LiteralPath $UserInputPath -ErrorAction Stop
+
+# Verify the target path stays inside the intended directory
+
+$AllowedFolder = "C:\SafeFolder"
+if (-not $FullyResolvedPath.Path.StartsWith($AllowedFolder, [System.StringComparison]::OrdinalIgnoreCase)) {
+    throw "Access Denied: Path traversal detected."
+}
