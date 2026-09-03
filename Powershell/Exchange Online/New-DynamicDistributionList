@@ -1,0 +1,4 @@
+Set-DynamicDistributionGroup -Identity "Your_Group_Name" -RecipientFilter {
+    (RecipientType -eq 'UserMailbox') -and 
+    (-not(PrimarySmtpAddress -like '*contractor*'))
+}
