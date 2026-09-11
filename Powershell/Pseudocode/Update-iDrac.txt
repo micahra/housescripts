@@ -1,0 +1,8 @@
+Programatically connect to iDrac and run commands to do the following:
+- Get updates
+- Get current version
+- Change update server
+- Set DNS
+- View Log and Health of hardware devices
+
+Should be a programatic interface
