@@ -9,7 +9,7 @@ $REMOTE_ADDRESS = Read-Host("Enter Remote IP: ")
 $BASE_FILE = "remote_ping.txt"
 $CURRENT_FILE = $BASE_FILE
 $FILE_NAME_COUNTER = 0 
-$MAX_FILE_SIZE_BYTES = 10MB
+$MAX_FILE_SIZE_BYTES = 500KB
 
 
 # ping.exe -t $REMOTE_ADDRESS | ForEach-Object {"$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $_"} | Tee-Object -FilePath "remote_ping.txt"
