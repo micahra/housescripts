@@ -6,3 +6,6 @@ $remote_address = Read-Host("Enter Remote IP: ")
 
 
 ping.exe -t $remote_address | ForEach-Object {"$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $_"} | Tee-Object -FilePath "remote_ping.txt"
+
+# make Tee-Object create a new file when file reaches certain size
+# append file numering to end of file name when files reach a certain size
