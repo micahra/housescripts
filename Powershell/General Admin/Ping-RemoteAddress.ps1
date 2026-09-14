@@ -1,7 +1,7 @@
 # This is a windows script
 # This script will ping a remote address with timestamps, and also echo to a text file, located at %userprofile%\Documents\remote_ping.txt
 
-#Additional changes possible:
+# Additional changes possible:
 #   Accept commandline parameters
 #   Format for Additional operating systems
 
@@ -12,7 +12,6 @@ $FILE_NAME_COUNTER = 0
 $MAX_FILE_SIZE_BYTES = 500KB
 
 
-# ping.exe -t $REMOTE_ADDRESS | ForEach-Object {"$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $_"} | Tee-Object -FilePath "remote_ping.txt"
 while ($true) {
     ping.exe -t $REMOTE_ADDRESS | ForEach-Object {
         
@@ -28,6 +27,3 @@ while ($true) {
     "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $_" | Tee-Object -FilePath $CURRENT_FILE -Append
     }
 }
-
-# make Tee-Object create a new file when file reaches certain size
-# append file numering to end of file name when files reach a certain size
