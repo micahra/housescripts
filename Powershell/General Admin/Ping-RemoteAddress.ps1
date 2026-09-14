@@ -4,6 +4,7 @@
 #Additional changes possible:
 #   Accept commandline parameters
 #   Format for Additional operating systems
+
 $REMOTE_ADDRESS = Read-Host("Enter Remote IP: ")
 $BASE_FILE = "remote_ping.txt"
 $CURRENT_FILE = $BASE_FILE
