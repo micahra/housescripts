@@ -1,0 +1,5 @@
+Avoid Invoke-Expression (IEX)Never pass raw user input into Invoke-Expression. 
+
+If you need dynamic code execution, convert the input into a script block or use parameters instead.
+Unsafe: Invoke-Expression "Get-Process -Name $UserInput"Example of an injection attack: 
+If $UserInput is notepad; Stop-Computer, the computer will shut down.
