@@ -1,4 +1,7 @@
 if you wish to run locally without a Docker container, install the following Python libraries:
 
-
+"""
 pip install transformers accelerate torch
+"""
+
+You can then load and execute the model directly on your Apple Silicon GPU (mps) using a Python script that handles tokenization and generation via Hugging Face.
