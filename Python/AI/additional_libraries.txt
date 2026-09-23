@@ -1,0 +1,4 @@
+if you wish to run locally without a Docker container, install the following Python libraries:
+
+
+pip install transformers accelerate torch
