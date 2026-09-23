@@ -1,0 +1,3 @@
+Steps to run locally:
+1. run the start_container.sh script first
+2. run interactive.py to start the local python interactive terminal
