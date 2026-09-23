@@ -33,6 +33,21 @@ Core Uses in AI and Multimodal Models
 - Data Conversion: 
     Pillow converts raw visual images into pixel arrays that can be easily transformed into mathematical tensors by libraries like torch.
 
+*************************************************************************
+Transformers:
+- The purpose of the transformers module (developed by Hugging Face) is to provide a unified API to easily download, load, and run state-of-the-art pre-trained AI models. Instead of writing thousands of lines of complex neural network math from scratch to implement architectures like Qwen, Llama, or BERT, transformers reduces the entire process to just a few lines of code.
+
+Core Functions of the Transformers Module
+- Model & Architecture Abstraction: 
+    It automatically downloads and configures the exact neural network structure required by a specific model repository. When you point it at empero-ai/Qwythos-9B-Claude-Mythos-5-1M, it reads the structural settings (config.json) and perfectly wires up the layers to accept the downloaded weights.
+- The Tokenizer & Processor: 
+    Language models cannot read text or images directly; they process numbers. The module includes specialized "Tokenizers" (for text) and "Processors" (for images and video). These tools split your text into numeric chunks ("tokens") and normalize your images so the underlying neural network can understand them.
+- Standardized Generation API: 
+    It provides powerful high-level methods like .generate(). This function manages the heavy lifting of text generation, controlling parameters like how creative the model should be (temperature), how many tokens to generate (max_new_tokens), and how it picks the next word.
+
+accelerate
+
+torchvision
 
 
 
