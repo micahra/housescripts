@@ -1,3 +1,7 @@
+You will need the following Python modules as a baseline:
+
+pip install openai
+
 if you wish to run locally without a Docker container, install the following Python libraries:
 
 """
