@@ -4,8 +4,37 @@ pip install openai
 
 if you wish to run locally without a Docker container, install the following Python libraries:
 
-"""
 pip install transformers accelerate torch
-"""
+
+
+pip install pillow
+
+*************************************************************************
+torch (PyTorch): 
+- The purpose of the torch library (commonly known as PyTorch) is to serve as an open-source machine learning and deep learning framework. 
+- It provides two main capabilities for developers and researchers:
+    High-Performance Tensor Computation: It acts like NumPy, but with the critical ability to run calculations on hardware accelerators like GPUs and Apple Silicon (via the Metal Performance Shaders or mps device), which speeds up math operations by orders of magnitude.
+    Deep Learning Framework: It contains a built-in automatic differentiation engine (autograd) that automatically calculates the mathematical gradients needed to train, fine-tune, and run modern neural networks—including Large Language Models (LLMs).
+
+Why Modern Models need PyTorch:
+- At its core, PyTorch manipulates "Tensors" (multi-dimensional arrays of numbers). LLMs require billions of matrix multiplications to generate a single word; torch ensures these operations happen directly on your MacBook's graphics hardware instead of your CPU.
+- Popular AI libraries like transformers and vllm are not standalone engines. They are wrappers built on top of torch. When you load a model file (like a .safetensors file), torch is what physically allocates your 128GB of RAM, loads the model weights into memory, and handles the generation logic.
+- It allows the exact same AI model script to run seamlessly across different systems. By changing a single line of code, torch can shift calculations between an NVIDIA GPU (cuda), an Apple Silicon chip (mps), or a standard processor (cpu).
+*************************************************************************
+Pillow ():
+- The purpose of the Pillow module (imported in Python code simply as PIL) is to add image processing capabilities to your Python interpreter. It is the modern, actively maintained fork of the original PIL (Python Imaging Library).
+- When working with multimodal Large Language Models (like the one you are setting up), Pillow acts as the bridge that allows Python to open, read, and manipulate physical image files so they can be fed into the model.
+
+Core Uses in AI and Multimodal Models
+- Opening and Formatting Images:
+    AI models cannot read raw .jpg or .png files directly from your hard drive. Pillow is used to load the image into memory and convert it into a standard format (like RGB) that the model's processor expects.
+- Resizing and Cropping:
+    Multimodal models often have strict limitations on the input size of an image (e.g., resizing an image down to 448x448 pixels). Pillow handles these transformations efficiently behind the scenes.
+- Data Conversion: 
+    Pillow converts raw visual images into pixel arrays that can be easily transformed into mathematical tensors by libraries like torch.
+
+
+
+
 
 You can then load and execute the model directly on your Apple Silicon GPU (mps) using a Python script that handles tokenization and generation via Hugging Face.
