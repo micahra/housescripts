@@ -45,9 +45,9 @@ Core Functions of the Transformers Module
 - Standardized Generation API: 
     It provides powerful high-level methods like .generate(). This function manages the heavy lifting of text generation, controlling parameters like how creative the model should be (temperature), how many tokens to generate (max_new_tokens), and how it picks the next word.
 
-accelerate
+accelerate (needed for multimodal_chat.py)
 
-torchvision
+torchvision (needed for multimodal_chat.py)
 
 
 
